@@ -2,14 +2,14 @@
 #include"Player.h"
 
 
-Player::Player()	 // ¹¹Ôìº¯Êı
+Player::Player()	 // æ„é€ å‡½æ•°
 {
-	name = "";       // Ãû×ÖÁô¿Õ
-	LV = 1;          // ³õÊ¼µÈ¼¶1
-	NHP = 100.0f;    // ³õÊ¼ÑªÁ¿100
-	MHP = 100.0f;	 // ³õÊ¼ÑªÉÏÏŞ100
-	TP = 80.0f;      // ÌåÁ¦
-	ENERGY = 0.0f;   // ÔªËØ³äÄÜ³õÊ¼0
+	name = "";       // åå­—ç•™ç©º
+	LV = 1;          // åˆå§‹ç­‰çº§1
+	NHP = 100.0f;    // åˆå§‹è¡€é‡100
+	MHP = 100.0f;	 // åˆå§‹è¡€ä¸Šé™100
+	TP = 80.0f;      // ä½“åŠ›
+	ENERGY = 0.0f;   // å…ƒç´ å……èƒ½åˆå§‹0
 }
 
 void Player::setName(std::string n){name = n;}
@@ -22,6 +22,6 @@ float Player::getENERGY(){return ENERGY;}
 
 void Player::setLV(int lv){LV = lv;}
 void Player::setNHP(float nhp){NHP = nhp;}
-void Player::setMHP(float mhp){NHP = mhp;}
+void Player::setMHP(float mhp){MHP = mhp;}
 void Player::setTP(float tp){TP = tp;}
 void Player::setENERGY(float e){ENERGY = e;}
