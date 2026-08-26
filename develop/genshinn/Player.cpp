@@ -13,15 +13,33 @@ Player::Player()	 // 构造函数
 }
 
 void Player::setName(std::string n){name = n;}
-std::string Player::getName(){return name;}
-int Player::getLV(){return LV;}
-float Player::getNHP(){return NHP;}
-float Player::getMHP(){return MHP; }
-float Player::getTP(){return TP;}
-float Player::getENERGY(){return ENERGY;}
+std::string Player::getName() const{return name;}
+int Player::getLV() const{return LV;}
+float Player::getNHP() const{return NHP;}
+float Player::getMHP() const{return MHP;}
+float Player::getTP() const{return TP;}
+float Player::getENERGY() const{return ENERGY;}
 
-void Player::setLV(int lv){LV = lv;}
-void Player::setNHP(float nhp){NHP = nhp;}
-void Player::setMHP(float mhp){MHP = mhp;}
-void Player::setTP(float tp){TP = tp;}
-void Player::setENERGY(float e){ENERGY = e;}
+void Player::setLV(int lv){LV = lv < 1 ? 1 : lv;}
+
+void Player::setNHP(float nhp)
+{
+	if(nhp < 0.0f){NHP = 0.0f;}
+	else if(nhp > MHP){NHP = MHP;}
+	else{NHP = nhp;}
+}
+
+void Player::setMHP(float mhp)
+{
+	MHP = mhp < 1.0f ? 1.0f : mhp;
+	if(NHP > MHP){NHP = MHP;}
+}
+
+void Player::setTP(float tp){TP = tp < 0.0f ? 0.0f : tp;}
+
+void Player::setENERGY(float e)
+{
+	if(e < 0.0f){ENERGY = 0.0f;}
+	else if(e > 100.0f){ENERGY = 100.0f;}
+	else{ENERGY = e;}
+}
