@@ -4,24 +4,24 @@
 #include<iostream>
 class Player {
 private:
-	std::string name;		//Íæ¼ÒÃû
-	int LV;					//µÈ¼¶
-	float NHP;				//µ±Ç°ÑªÁ¿
-	float MHP;				//×î´óÑªÁ¿
-	float TP;				//ÌåÁ¦
-	float ENERGY;			//ÔªËØ³äÄÜ
-//================ÊôĞÔÇø====================
+	std::string name;		//ç©å®¶å
+	int LV;					//ç­‰çº§
+	float NHP;				//å½“å‰è¡€é‡
+	float MHP;				//æœ€å¤§è¡€é‡
+	float TP;				//ä½“åŠ›
+	float ENERGY;			//å…ƒç´ å……èƒ½
+//================å±æ€§åŒº====================
 public:
 	Player();
 	void setName(std::string n);
-	std::string getName();
+	std::string getName() const;
 
 //==========================================
-	int getLV();			
-	float getNHP();
-	float getMHP();
-	float getTP();
-	float getENERGY();
+	int getLV() const;
+	float getNHP() const;
+	float getMHP() const;
+	float getTP() const;
+	float getENERGY() const;
 //==========================================
 	void setLV(int lv);
 	void setNHP(float nhp);
@@ -34,5 +34,5 @@ public:
 
 
 
-#endif 
+#endif
 
