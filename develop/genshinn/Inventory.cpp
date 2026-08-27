@@ -3,13 +3,9 @@
 #include<limits>
 
 
-Inventory::Inventory(std::size_t capacity)
-	: m_capacity(capacity)
-{
-}
+Inventory::Inventory(std::size_t capacity):m_capacity(capacity){}
 
-bool Inventory::addItem(const Item& item, int quantity)
-{
+bool Inventory::addItem(const Item& item, int quantity){
 	if(item.id <= 0 || quantity <= 0){return false;}
 
 	auto found = std::find_if(m_items.begin(), m_items.end(),
@@ -48,8 +44,7 @@ bool Inventory::addItem(const Item& item, int quantity)
 	return true;
 }
 
-bool Inventory::removeItem(int itemId, int quantity)
-{
+bool Inventory::removeItem(int itemId, int quantity){
 	if(itemId <= 0 || quantity <= 0 || quantityOf(itemId) < quantity){
 		return false;
 	}
@@ -72,8 +67,7 @@ bool Inventory::removeItem(int itemId, int quantity)
 	return true;
 }
 
-bool Inventory::discardItem(int itemId, int quantity)
-{
+bool Inventory::discardItem(int itemId, int quantity){
 	const ItemStack* stack = findItem(itemId);
 	if(stack == nullptr || stack->item.type == ItemType::Quest){
 		return false;
@@ -82,8 +76,7 @@ bool Inventory::discardItem(int itemId, int quantity)
 	return removeItem(itemId, quantity);
 }
 
-const ItemStack* Inventory::findItem(int itemId) const
-{
+const ItemStack* Inventory::findItem(int itemId) const{
 	auto found = std::find_if(m_items.begin(), m_items.end(),
 		[itemId](const ItemStack& stack){return stack.item.id == itemId;});
 
@@ -91,8 +84,7 @@ const ItemStack* Inventory::findItem(int itemId) const
 	return &(*found);
 }
 
-int Inventory::quantityOf(int itemId) const
-{
+int Inventory::quantityOf(int itemId) const{
 	long long total = 0;
 	for(const ItemStack& stack : m_items){
 		if(stack.item.id == itemId){total += stack.quantity;}
@@ -104,18 +96,15 @@ int Inventory::quantityOf(int itemId) const
 	return static_cast<int>(total);
 }
 
-bool Inventory::isFull() const
-{
+bool Inventory::isFull() const{
 	return m_items.size() >= m_capacity;
 }
 
-std::size_t Inventory::getUsedSlots() const
-{
+std::size_t Inventory::getUsedSlots() const{
 	return m_items.size();
 }
 
-std::size_t Inventory::getCapacity() const
-{
+std::size_t Inventory::getCapacity() const{
 	return m_capacity;
 }
 
