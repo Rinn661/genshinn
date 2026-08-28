@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "genshinn\\x64\\Debug\\Item.obj",
+            "outputs": [
+                "genshinn\\x64\\Debug\\Item.h.obj.dt.module.json",
+                "genshinn\\x64\\Debug\\Item.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

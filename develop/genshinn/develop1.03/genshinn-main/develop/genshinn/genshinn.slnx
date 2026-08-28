@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="genshinn.vcxproj" Id="2bed59db-85f0-4df8-9b21-58fabe763c46" />
+</Solution>

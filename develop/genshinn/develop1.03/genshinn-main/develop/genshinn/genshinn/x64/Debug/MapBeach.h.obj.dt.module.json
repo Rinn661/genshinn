@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "genshinn\\x64\\Debug\\MapBeach.obj",
+            "outputs": [
+                "genshinn\\x64\\Debug\\MapBeach.h.obj.dt.module.json",
+                "genshinn\\x64\\Debug\\MapBeach.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
